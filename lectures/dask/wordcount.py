@@ -11,7 +11,7 @@ FILES = ["words/part-00000", "words/part-00001", "words/part-00002", "words/part
 def countwords(f):
     space = re.compile("\W+")
     counter = 0
-    with open(f, "r") as infile:
+    with open(f, "r", encoding='utf-8') as infile:
         for line in infile:
             tokens = space.split(line.strip())
             counter = counter + len(tokens)
@@ -20,7 +20,7 @@ def countwords(f):
 
 def countlines(f):
     counter = 0
-    with open(f, "r") as infile:
+    with open(f, "r", encoding='utf-8') as infile:
         for line in infile:
             counter = counter + 1
     return counter
